@@ -106,8 +106,8 @@ document.getElementById('btn-sayHi').onclick = sayHi
  * Khối 2: xử lý
  * Nếu value của 3 số k phải NaN 
  *    + loop i qua tất cả các số
- *    + nếu arrNum[i] % 2 === 0 => soChan += arrNum[i]
- *    + ngược lại => soLe += arrNum[i]
+ *    + nếu arrNum[i] % 2 === 0 => soChan++
+ *    + ngược lại => soLe++
  * Ngược lại => mời nhập lại
  * Khối 3: in ra màn hình soChan, soLe
  */
@@ -118,17 +118,17 @@ function xemSoChanLe() {
   var soNguyen3 = Number(document.getElementById('inputNum6').value)
 
   var arrNum = [soNguyen1, soNguyen2, soNguyen3]
-  var soChan = []
-  var soLe = []
+  var soChan = 0
+  var soLe = 0
 
   if (Number.isNaN(soNguyen1) === false && Number.isNaN(soNguyen2) === false && Number.isNaN(soNguyen3) === false) {
     for (var i = 0; i < arrNum.length; i++) {
       if (arrNum[i] % 2 === 0) {
-        soChan += arrNum[i] + ','
+        soChan++
       } else {
-        soLe += arrNum[i] + ','
+        soLe++
       }
-      console.log(typeof soChan, typeof soLe)
+      console.log(soChan, soLe)
     }
     document.getElementById('sortNum2').innerHTML = 'Số chẵn: ' + soChan + '<br>' + 'Số lẻ: ' + soLe
   } else {
